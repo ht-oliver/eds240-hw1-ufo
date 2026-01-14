@@ -4,6 +4,7 @@ subtitle: "Interpreting `{ggplot2}` code"
 description: "Assigned Wed 01/07/2026 | Due Wed 01/14/2026"
 author: "Your Name"
 toc: true
+code-line-numbers: true
 editor_options: 
   chunk_output_type: console
 ---
@@ -52,11 +53,11 @@ showtext::showtext_auto(enable = TRUE)
 
 1. **What is the author defining in lines 15-17? Where else in the code do these defined variables show up? What advantage(s) is there to defining these values here, as variables, rather than defining the values directly throughout the script?**
 
-    - Answer here
+    - The author is determining the font colors for the output. This makes it easier to change font colors for the entire document once it's completed. Better for reproducibility and customization. These colors show up in most if not all of the plots/figures.
 
 2. **In your own words, explain what the function, `font_add_google()`, does. What's the difference between the two arguments, `name` and `family`?**
 
-    - Answer here
+    - This function adds the definition and specifications for a font to your document, which allows your figures to access and display pre-determined fonts. 'Name' is the name of the font from google fonts, and 'family' determines 
 
 ## II. Data wrangling
 
@@ -78,7 +79,7 @@ df_pop <- places |>
 
 3. **Describe what this data frame contains.**
 
-    - Answer here
+    - This df contains the sum of population of each US state. Populations are associated with their respective two-letter capitalized US state code.
 
 ### ii. Create `df_us`
 
@@ -102,11 +103,11 @@ df_us <- ufo_sightings |>
 
 4. **Describe what this data frame contains.**
 
-    - Answer here
+    - This df uses state, population, and number of UFO observations to display information about the numeric proportionality of UFO oberservations per capita. There is also a column which translates the numeric value into an opacity value for figure display.
 
 5. **What does `opacity_val` represent, and why is it calculated?**
 
-    - Answer here
+    - Opacity_val represents the proportionality of state population and UFO observations on a spectrum from 0 observations to the maximum value of this proportion. This is calculated so states can be quickly visually distinguished by the commonality of UFO observations per capita.
 
 ### iii. Create `df_shape`
 
@@ -130,15 +131,15 @@ df_shape <- ufo_sightings |>
 
 6. **Describe what this data frame contains.**
 
-    - Answer here
+    - The data frame has the top ten highest reported shapes of UFOs, arranged by the number of sitings. It also has an associated opacity value for figure display.
 
 7. **What does `fct_reorder` do when it is applied to the `shape` variable? What would have happened if this step was not performed?**
 
-    - Answer here
+    - This ensures that the dataframe is arranged by highest number of sitings to lowest number of sitings, as opposed to arranging them by the shape. Without this step, the data probably would have been arranged alphabetically by shape name.
 
 8. **What is the purpose of rescaling `opacity_val`? And why rescale from 0.3 to 1?**
 
-    - Answer here
+    - This ensures that our opacity will run on a scale from the lowest to highest values that are actually in our dataset. Going from 0.3-1 ensures that nothing is completely transparent, and that our highest value is totally opaque. This way, all of the data will be visible.
 
 ### iv. Create `df_day_hour`
 
@@ -166,11 +167,11 @@ df_day_hour <- ufo_sightings |>
 
 9. **Describe what this data frame contains.**
 
-    - Answer here
+    - This data frame contains total UFO citings grouped by day of the week and time of day, along with a corresponding opacity value for each hour of each weekday. There are duplicates of the day and hour column, which I assume are used for labeling in the figures that are produced. I.E., 'day' column is for computation, and 'wday' is for figure display.
 
 10. **What is the purpose of the last line inside the `case_when()` statement (`TRUE ~ paste0(hour - 12, "pm")`)?**
 
-    - Answer here
+    - This line that makes sure all hour values that are not between 0 or 12 are assigned values from 1-12 and given a 'pm' label. This basically facilitates the conversion of 24-hr time to 12hr am/pm time that isn't taken care of in the three lines of code above.
 
 ## III. Prepare text elements
 
@@ -192,7 +193,7 @@ caption <- glue("{original}{space}{dan_github}
 
 11. **In your own words, what is the difference between `paste0()` and `glue()`? Why did the author use `paste0` to construct `quotes` and `glue` to construct the other text elements?**
 
-    - Answer here
+    - `glue()` and `paste0()` are both used to create character strings. `glue()` is able to directly interpret expressions within `{}` as R code which gives it more flexibility in adding text modification. `paste0()` converts expressions into strings directly, and is better for simple text display. The author probably used `glue()` when they wanted to add text effects, and `paste()` when they did not.
 
 ## IV. Build plots
 
