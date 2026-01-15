@@ -235,7 +235,7 @@ plot_shape <- ggplot(data = df_shape) +
 
 12. **Explain the values provided to the `x` aesthetic for both text geoms (`shape` & `total_sightings`).**
 
-    - Answer here
+    - These values determine the left/right alignment of the category label text.
 
 ### ii. Build `plot_us` 
 
@@ -275,7 +275,7 @@ plot_us <-  ggplot(df_us) +
 
 13. **Consider the order of `geom_*()` layers in the the above plot (`plot_us`). Why did the author order the layers in this way?**
 
-    - Answer here
+    - The author wanted to ensure that the ratio and state code appeared on top of the transparency square. The lower levels in the code appear first in figure display.
 
 ### iii. Build `plot_day`
 
@@ -309,11 +309,11 @@ plot_day <- ggplot(data = df_day_hour) +
 
 14. **This plot includes one-letter labels for each day of the week. How is ths accomplished when week days are written using their three-letter abbreviations (e.g. `Mon`, `Tue`) in the `df_day_hour` data frame?**
 
-    - Answer here
+    - This chunk of code `(string = wday, start = 1, end = 1))` specifies that the string should only be one letter long
 
 15. **What role do the `ylim()` and `xlim()` functions play in shaping a ggplot, and how do they change the visual layout of this particular plot? To better understand their effect, try rerunning the code with each of these lines commented out and observe how the plot’s spacing and composition change.**
 
-    - Answer here
+    - `ylim()` and `xlim()` determine the visual limits for their respective axis. They determined where the edges of the plot are, and therefore the scale of the metrics/text in the graphic. Changing the `ylim()` value changes the length of the radial sections of the graph, and changing the `xlim()` value changes the width of radial sections.
 
 ### iv. Build `quote*`s
 
@@ -374,7 +374,7 @@ quote3 <- ggplot() +
 
 16. **Why do you think the author chose to convert these text elements (and also in `plot_ufo`, below!) into ggplot objects (you may consider returning to this question after you've worked your way through all of the code)?**
 
-    - Answer here
+    - I suspect this is because it will make them easier to position relative to other figures in the visual.
 
 ### v. Build `plot_ufo`
 
@@ -429,7 +429,7 @@ plot_base <- ggplot() +
 
 17. **Why does the author render `plot.caption` using `ggtext::element_markdown()`, rather than `element_text()` (like he does for rendering `plot.title` and `text`)?**
 
-    - Answer here
+    - Using `ggtext::element_markdown()` provides more options for text customization. Evidently the author wanted to format the caption more than the title and subtitle.
 
 ## V. Assemble & save
 
@@ -460,11 +460,11 @@ ggsave(plot = plot_final,
 
 18. **Explain how `plot_final` is assembled. What do you think is the most challenging aspect of arranging all components into a single plot?**
 
-    - Answer here
+    - Making sure that all of the individual plots are sized and spaced correctly so that when they are combined they can be arranged into a functional format.
 
 19. **Can you think of one reason the author may have chosen to separate the construction of `plot_base` and `plot_final`?**
 
-    - Answer here
+    - Because the final plots probably cannot be arranged until the author can visualize they're relative size. The only way to confirm this is to plot them all in the same place - just to make sure nothing is exceptionally large. After that - they can be aligned on the final page.
 
 ## Answer some final reflective questions 
 
@@ -472,28 +472,28 @@ ggsave(plot = plot_final,
 
     a. **What "perceptual tasks" (from Cleveland & McGill's heirarchy) must the viewer perform to extract information from these visualizations?**
         
-        - Answer here
+        - Length and volume. 
     
     b. **What task(s) do you think the author wanted to enable or message(s) he wanted to convey with these visualizations (see lecture 2.1, slide 16 for examples)? Be sure to note at least one task / message for each of the three data viz.**
     
-        - Answer here
+        - In the first graphic the author wants to allow for comparisons of sitings per state, the second graphic is showing spatial trends, and the bottom graphic the author wants to allow comparison of times.
     
     c. **Name at least one caveat to the "hierarchy of perceptual tasks" that the author employed to achieve a goal(s) you noted in question b?**
     
-        - Answer here
+        - Using the shape of the US in the middle (second) graphic helps simulate/illicit spatial patterns.
 
 21. **Describe two elements of this piece that you find visually-pleasing / easy to understand / intuitive. Why?** 
 
-    - Answer here
+    - I like that many portions of all three graphics almost look like they're disappearing into the page. It really improves the spooky/supernatural vibe of the graphic.
 
 22. **Describe two elements of this piece that you feel could be better presented in a different way. Why?** 
 
-    - Answer here
+    - The audience and purpose for this graphic is really not clear - I think they could have picked better data or patterns to try and send a more specific message. Also, the figure captions are very bland and do not stand out. I would want to make them another font. I would also include a data source.
     
 23. **Describe two new things that you learned by interpreting / annotating this code. These could be packages, functions, or even code organizational approaches that you hadn't previously known about or considered.**
 
-    - Answer here
+    - I learned about the importance of setting objects for elements like colors and fonts early in the script so you can reduce repetitive code. I also learned about using `element_text()` vs `element_markdown()`, and how to achieve some more text customization.
 
 24. **How, if at all, did you use AI tools to help you interpret this code? Describe your approach to using these tools for this assignment. In what ways was consulting the documentation more (or less) helpful than using AI?**
 
-    - Answer here
+    - I used ChatGPT to give me a rundown of the `case_when()` function that was used to convert times to a 12hr format. I copied the last line of the code chunk into ChatGPT and asked it to give me a simplified explanation of what it thought the code was doing. Once I was reminded that it was likely a "catch-all" term, the rest was pretty easy to figure out from looking at the dataframes. The documentation was more difficult to navigate in finding out how the syntax (tildes) determined the commands. I also used ChatGPT to tell me the difference between `glue()` and `paste0()`. I first checked the documentation, and wasn't quite able to distinguish between the two, and the answer from ChatGPT was also not particularly helpful. I suspect I may still misunderstand the two functions. 
