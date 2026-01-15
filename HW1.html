@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Your Name">
+<meta name="author" content="Henry Oliver">
 <meta name="description" content="Assigned Wed 01/07/2026 | Due Wed 01/14/2026">
 
 <title>HW #1</title>
@@ -127,7 +127,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Your Name </p>
+             <p>Henry Oliver </p>
           </div>
   </div>
     
@@ -191,11 +191,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li><p><strong>What is the author defining in lines 15-17? Where else in the code do these defined variables show up? What advantage(s) is there to defining these values here, as variables, rather than defining the values directly throughout the script?</strong></p>
 <ul>
-<li>Answer here</li>
+<li>The author is determining the font colors for the output. This makes it easier to change font colors for the entire document once it’s completed. Better for reproducibility and customization. These colors show up in most if not all of the plots/figures.</li>
 </ul></li>
 <li><p><strong>In your own words, explain what the function, <code>font_add_google()</code>, does. What’s the difference between the two arguments, <code>name</code> and <code>family</code>?</strong></p>
 <ul>
-<li>Answer here</li>
+<li>This function adds the definition and specifications for a font to your document, which allows your figures to access and display pre-determined fonts. ‘Name’ is the name of the font from google fonts, and ‘family’ determines</li>
 </ul></li>
 </ol>
 </section>
@@ -216,7 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="3" type="1">
 <li><p><strong>Describe what this data frame contains.</strong></p>
 <ul>
-<li>Answer here</li>
+<li>This df contains the sum of population of each US state. Populations are associated with their respective two-letter capitalized US state code.</li>
 </ul></li>
 </ol>
 </section>
@@ -239,11 +239,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="4" type="1">
 <li><p><strong>Describe what this data frame contains.</strong></p>
 <ul>
-<li>Answer here</li>
+<li>This df uses state, population, and number of UFO observations to display information about the numeric proportionality of UFO oberservations per capita. There is also a column which translates the numeric value into an opacity value for figure display.</li>
 </ul></li>
 <li><p><strong>What does <code>opacity_val</code> represent, and why is it calculated?</strong></p>
 <ul>
-<li>Answer here</li>
+<li>Opacity_val represents the proportionality of state population and UFO observations on a spectrum from 0 observations to the maximum value of this proportion. This is calculated so states can be quickly visually distinguished by the commonality of UFO observations per capita.</li>
 </ul></li>
 </ol>
 </section>
@@ -266,15 +266,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="6" type="1">
 <li><p><strong>Describe what this data frame contains.</strong></p>
 <ul>
-<li>Answer here</li>
+<li>The data frame has the top ten highest reported shapes of UFOs, arranged by the number of sitings. It also has an associated opacity value for figure display.</li>
 </ul></li>
 <li><p><strong>What does <code>fct_reorder</code> do when it is applied to the <code>shape</code> variable? What would have happened if this step was not performed?</strong></p>
 <ul>
-<li>Answer here</li>
+<li>This ensures that the dataframe is arranged by highest number of sitings to lowest number of sitings, as opposed to arranging them by the shape. Without this step, the data probably would have been arranged alphabetically by shape name.</li>
 </ul></li>
 <li><p><strong>What is the purpose of rescaling <code>opacity_val</code>? And why rescale from 0.3 to 1?</strong></p>
 <ul>
-<li>Answer here</li>
+<li>This ensures that our opacity will run on a scale from the lowest to highest values that are actually in our dataset. Going from 0.3-1 ensures that nothing is completely transparent, and that our highest value is totally opaque. This way, all of the data will be visible.</li>
 </ul></li>
 </ol>
 </section>
@@ -301,11 +301,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="9" type="1">
 <li><p><strong>Describe what this data frame contains.</strong></p>
 <ul>
-<li>Answer here</li>
+<li>This data frame contains total UFO citings grouped by day of the week and time of day, along with a corresponding opacity value for each hour of each weekday. There are duplicates of the day and hour column, which I assume are used for labeling in the figures that are produced. I.E., ‘day’ column is for computation, and ‘wday’ is for figure display.</li>
 </ul></li>
 <li><p><strong>What is the purpose of the last line inside the <code>case_when()</code> statement (<code>TRUE ~ paste0(hour - 12, "pm")</code>)?</strong></p>
 <ul>
-<li>Answer here</li>
+<li>This line that makes sure all hour values that are not between 0 or 12 are assigned values from 1-12 and given a ‘pm’ label. This basically facilitates the conversion of 24-hr time to 12hr am/pm time that isn’t taken care of in the three lines of code above.</li>
 </ul></li>
 </ol>
 </section>
@@ -327,7 +327,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="11" type="1">
 <li><p><strong>In your own words, what is the difference between <code>paste0()</code> and <code>glue()</code>? Why did the author use <code>paste0</code> to construct <code>quotes</code> and <code>glue</code> to construct the other text elements?</strong></p>
 <ul>
-<li>Answer here</li>
+<li><code>glue()</code> and <code>paste0()</code> are both used to create character strings. <code>glue()</code> is able to directly interpret expressions within <code>{}</code> as R code which gives it more flexibility in adding text modification. <code>paste0()</code> converts expressions into strings directly, and is better for simple text display. The author probably used <code>glue()</code> when they wanted to add text effects, and <code>paste()</code> when they did not.</li>
 </ul></li>
 </ol>
 </section>
@@ -368,7 +368,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="12" type="1">
 <li><p><strong>Explain the values provided to the <code>x</code> aesthetic for both text geoms (<code>shape</code> &amp; <code>total_sightings</code>).</strong></p>
 <ul>
-<li>Answer here</li>
+<li>These values determine the left/right alignment of the category label text.</li>
 </ul></li>
 </ol>
 </section>
@@ -406,7 +406,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="13" type="1">
 <li><p><strong>Consider the order of <code>geom_*()</code> layers in the the above plot (<code>plot_us</code>). Why did the author order the layers in this way?</strong></p>
 <ul>
-<li>Answer here</li>
+<li>The author wanted to ensure that the ratio and state code appeared on top of the transparency square. The lower levels in the code appear first in figure display.</li>
 </ul></li>
 </ol>
 </section>
@@ -439,11 +439,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="14" type="1">
 <li><p><strong>This plot includes one-letter labels for each day of the week. How is ths accomplished when week days are written using their three-letter abbreviations (e.g.&nbsp;<code>Mon</code>, <code>Tue</code>) in the <code>df_day_hour</code> data frame?</strong></p>
 <ul>
-<li>Answer here</li>
+<li>This chunk of code <code>(string = wday, start = 1, end = 1))</code> specifies that the string should only be one letter long</li>
 </ul></li>
 <li><p><strong>What role do the <code>ylim()</code> and <code>xlim()</code> functions play in shaping a ggplot, and how do they change the visual layout of this particular plot? To better understand their effect, try rerunning the code with each of these lines commented out and observe how the plot’s spacing and composition change.</strong></p>
 <ul>
-<li>Answer here</li>
+<li><code>ylim()</code> and <code>xlim()</code> determine the visual limits for their respective axis. They determined where the edges of the plot are, and therefore the scale of the metrics/text in the graphic. Changing the <code>ylim()</code> value changes the length of the radial sections of the graph, and changing the <code>xlim()</code> value changes the width of radial sections.</li>
 </ul></li>
 </ol>
 </section>
@@ -502,7 +502,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="16" type="1">
 <li><p><strong>Why do you think the author chose to convert these text elements (and also in <code>plot_ufo</code>, below!) into ggplot objects (you may consider returning to this question after you’ve worked your way through all of the code)?</strong></p>
 <ul>
-<li>Answer here</li>
+<li>I suspect this is because it will make them easier to position relative to other figures in the visual.</li>
 </ul></li>
 </ol>
 </section>
@@ -553,7 +553,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="17" type="1">
 <li><p><strong>Why does the author render <code>plot.caption</code> using <code>ggtext::element_markdown()</code>, rather than <code>element_text()</code> (like he does for rendering <code>plot.title</code> and <code>text</code>)?</strong></p>
 <ul>
-<li>Answer here</li>
+<li>Using <code>ggtext::element_markdown()</code> provides more options for text customization. Evidently the author wanted to format the caption more than the title and subtitle.</li>
 </ul></li>
 </ol>
 </section>
@@ -584,11 +584,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="18" type="1">
 <li><p><strong>Explain how <code>plot_final</code> is assembled. What do you think is the most challenging aspect of arranging all components into a single plot?</strong></p>
 <ul>
-<li>Answer here</li>
+<li>Making sure that all of the individual plots are sized and spaced correctly so that when they are combined they can be arranged into a functional format.</li>
 </ul></li>
 <li><p><strong>Can you think of one reason the author may have chosen to separate the construction of <code>plot_base</code> and <code>plot_final</code>?</strong></p>
 <ul>
-<li>Answer here</li>
+<li>Because the final plots probably cannot be arranged until the author can visualize they’re relative size. The only way to confirm this is to plot them all in the same place - just to make sure nothing is exceptionally large. After that - they can be aligned on the final page.</li>
 </ul></li>
 </ol>
 </section>
@@ -599,32 +599,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="a">
 <li><p><strong>What “perceptual tasks” (from Cleveland &amp; McGill’s heirarchy) must the viewer perform to extract information from these visualizations?</strong></p>
 <ul>
-<li>Answer here</li>
+<li>Length and volume.</li>
 </ul></li>
 <li><p><strong>What task(s) do you think the author wanted to enable or message(s) he wanted to convey with these visualizations (see lecture 2.1, slide 16 for examples)? Be sure to note at least one task / message for each of the three data viz.</strong></p>
 <ul>
-<li>Answer here</li>
+<li>In the first graphic the author wants to allow for comparisons of sitings per state, the second graphic is showing spatial trends, and the bottom graphic the author wants to allow comparison of times.</li>
 </ul></li>
 <li><p><strong>Name at least one caveat to the “hierarchy of perceptual tasks” that the author employed to achieve a goal(s) you noted in question b?</strong></p>
 <ul>
-<li>Answer here</li>
+<li>Using the shape of the US in the middle (second) graphic helps simulate/illicit spatial patterns.</li>
 </ul></li>
 </ol></li>
 <li><p><strong>Describe two elements of this piece that you find visually-pleasing / easy to understand / intuitive. Why?</strong></p>
 <ul>
-<li>Answer here</li>
+<li>I like that many portions of all three graphics almost look like they’re disappearing into the page. It really improves the spooky/supernatural vibe of the graphic.</li>
 </ul></li>
 <li><p><strong>Describe two elements of this piece that you feel could be better presented in a different way. Why?</strong></p>
 <ul>
-<li>Answer here</li>
+<li>The audience and purpose for this graphic is really not clear - I think they could have picked better data or patterns to try and send a more specific message. Also, the figure captions are very bland and do not stand out. I would want to make them another font. I would also include a data source.</li>
 </ul></li>
 <li><p><strong>Describe two new things that you learned by interpreting / annotating this code. These could be packages, functions, or even code organizational approaches that you hadn’t previously known about or considered.</strong></p>
 <ul>
-<li>Answer here</li>
+<li>I learned about the importance of setting objects for elements like colors and fonts early in the script so you can reduce repetitive code. I also learned about using <code>element_text()</code> vs <code>element_markdown()</code>, and how to achieve some more text customization.</li>
 </ul></li>
 <li><p><strong>How, if at all, did you use AI tools to help you interpret this code? Describe your approach to using these tools for this assignment. In what ways was consulting the documentation more (or less) helpful than using AI?</strong></p>
 <ul>
-<li>Answer here</li>
+<li>I used ChatGPT to give me a rundown of the <code>case_when()</code> function that was used to convert times to a 12hr format. I copied the last line of the code chunk into ChatGPT and asked it to give me a simplified explanation of what it thought the code was doing. Once I was reminded that it was likely a “catch-all” term, the rest was pretty easy to figure out from looking at the dataframes. The documentation was more difficult to navigate in finding out how the syntax (tildes) determined the commands. I also used ChatGPT to tell me the difference between <code>glue()</code> and <code>paste0()</code>. I first checked the documentation, and wasn’t quite able to distinguish between the two, and the answer from ChatGPT was also not particularly helpful. I suspect I may still misunderstand the two functions.</li>
 </ul></li>
 </ol>
 </section>
